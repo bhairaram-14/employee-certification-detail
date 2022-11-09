@@ -1,0 +1,27 @@
+create database project;
+use project;
+
+create table emp_detail(    
+   id INT NOT NULL AUTO_INCREMENT,
+   name VARCHAR(100) NOT NULL,
+   email VARCHAR(40) NOT NULL,
+   emp_code VARCHAR(13) UNIQUE,
+   otp INT,
+   PRIMARY KEY ( id ) );
+
+
+
+create table cert_detail(
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    cert_name VARCHAR(100) NOT NULL,
+    productname VARCHAR(100),
+    certficate_Id VARCHAR(20) NOT NULL,
+    description VARCHAR(100),
+    issueDate Date,
+    expirationDate Date,
+    issuedBy VARCHAR(50),
+    emp_id INT,
+    FOREIGN KEY(emp_id) REFERENCES emp_detail(id) );
+
+
+insert into emp_detail(name, email,emp_code) values("aman" ,"aman@gmail.com","SPAN-BLR-0000");
